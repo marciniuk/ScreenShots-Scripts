@@ -1,3 +1,5 @@
+![image](https://gitlab.com/xXBlackMaskXx/sss/raw/master/ScreenShots.png)
+
 # ScreenShots Script
 
 As the name suggests, this is a screenshoting script... yeah... revealing, I know ;P
