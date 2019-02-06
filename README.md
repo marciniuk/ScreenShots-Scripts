@@ -22,7 +22,7 @@ $ cp screenshot.sh [wherever you want]
 | Yes (or...)| dmenu              | Generic menu for X
 | (...or) Yes| rofi (+ rofi-dmenu)| A window switcher, application launcher and dmenu replacement
 
-#### Recommended dmenu
+#### ![Recommended dmenu](https://gitlab.com/xXBlackMaskXx/dmenu)
 
 ```shell
 $ git clone https://gitlab.com/xXBlackMaskXx/dmenu
