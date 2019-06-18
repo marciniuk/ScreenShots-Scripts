@@ -14,21 +14,21 @@ mkdir "$(xdg-user-dir PICTURES)"/.OldScreenShots/
 		" Quick") sleep 0.5 && maim -u "$(xdg-user-dir PICTURES)"/ScreenShots/"$(date +%G-%m-%d\ %H:%M:%S.png)" && exit 0;;
 
 		" Quick+copy") sleep 0.5 && maim -u "$(xdg-user-dir PICTURES)"/ScreenShots/"$(date +%G-%m-%d\ %H:%M:%S.png)"
-						xclip -selection clipboard -t image/png "$(find "$(xdg-user-dir PICTURES)"/ScreenShots/* | sed '$!d')" && exit 0;;
+		                xclip -selection clipboard -t image/png "$(find "$(xdg-user-dir PICTURES)"/ScreenShots/* | sed '$!d')" && exit 0;;
 		" Advanced")
 			#~~~~~~~~~~~~~~~#
 			# dmenu prompts #
 			#~~~~~~~~~~~~~~~#
 			TYPE="$(printf " Screen\n Window" | dmenu -i -p 'What do you want to screenshot?')"
 			COPY="$(printf " Yes\n No"        | dmenu -i -p 'Do you want to copy to clipboard?')"
-			TIME="$(printf "0.5\n5\n10\n15" 	| dmenu -i -p 'How many seconds you want to wait?')"
+			TIME="$(printf "0.5\n5\n10\n15"     | dmenu -i -p 'How many seconds you want to wait?')"
 
 			#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 			# Set flag if selected "Window" #
 			#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 			case "$TYPE" in
-				" Window")	FLAG="-s -u";;
-				*)      	FLAG="-u"
+				" Window") FLAG="-s -u";;
+				*)          FLAG="-u"
 			esac
 
 			#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
@@ -36,8 +36,8 @@ mkdir "$(xdg-user-dir PICTURES)"/.OldScreenShots/
 			#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 			case "$COPY" in
 				" Yes") sleep "$TIME" && maim $FLAG "$(xdg-user-dir PICTURES)"/ScreenShots/"$(date +%G-%m-%d\ %H:%M:%S.png)" && sleep 0.2
-						 xclip -selection clipboard -t image/png "$(find "$(xdg-user-dir PICTURES)"/ScreenShots/* | sed '$!d')";;
-				*)		 sleep "$TIME" && maim $FLAG "$(xdg-user-dir PICTURES)"/ScreenShots/"$(date +%G-%m-%d\ %H:%M:%S.png)"
+				         xclip -selection clipboard -t image/png "$(find "$(xdg-user-dir PICTURES)"/ScreenShots/* | sed '$!d')";;
+				*)       sleep "$TIME" && maim $FLAG "$(xdg-user-dir PICTURES)"/ScreenShots/"$(date +%G-%m-%d\ %H:%M:%S.png)"
 			esac;;
 
 		clear)
